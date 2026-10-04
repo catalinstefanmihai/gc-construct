@@ -23,3 +23,14 @@ Structură și infrastructură · Instalații (sanitare, electrice, termice) · 
 
 ## Contact
 Cerere de ofertă și calculator de estimare: https://gc-construct.eu/#calculator — răspuns în 24h.
+
+## Articole
+- [Vrei să construiești în 2026? Iată cât costă.](https://gc-construct.eu/blog/cat-costa-o-casa-2026): Exemplu real pe capitole: casă P+1E de 206 m² în București. Roșu închis ≈ 115.400 €, la cheie ≈ 210.000–252.000 €.
+- [nZEB în 2026: ce cere legea pentru o clădire nouă în România](https://gc-construct.eu/blog/nzeb-romania-2026): Ce înseamnă nZEB pentru o casă sau un imobil nou în România în 2026: minimum 30% energie regenerabilă, certificat energetic, anvelopă, instalații și ce verifici la constructor.
+- [De la nZEB la ZEB: ce aduce Directiva EPBD pentru clădirile noi](https://gc-construct.eu/blog/zeb-2030-directiva-epbd): Directiva (UE) 2024/1275: clădiri cu emisii zero din 2028 pentru clădirile publice și din 2030 pentru toate clădirile noi, panouri solare, amprenta de carbon. Calendar și impact pentru dezvoltatori.
+- [Casa pasivă vs. casa nZEB: criterii, diferențe, execuție](https://gc-construct.eu/blog/casa-pasiva-vs-nzeb): Casa pasivă (Passivhaus) vs. nZEB: necesar de încălzire de maximum 15 kWh/m²·an, etanșeitate n50 ≤ 0,6 h⁻¹, ventilare cu recuperare de căldură. Ce schimbă pentru execuție și buget.
+- [Autorizația de construire: de la certificatul de urbanism la primul beton](https://gc-construct.eu/blog/autorizatie-de-construire-pasi): Pașii pentru autorizația de construire conform Legii 50/1991: certificat de urbanism, avize, DTAC, studiu geotehnic, emiterea autorizației, anunțul de începere a lucrărilor la primărie și ISC.
+- [Doar manoperă sau la cheie? Cum alegi forma de contract](https://gc-construct.eu/blog/manopera-sau-la-cheie): Diferențele dintre contractul doar manoperă și cel la cheie (manoperă + materiale): cine cumpără materialele, cine răspunde de termene și garanție, ce trebuie scris în contract.
+- [Devizul pe cantități: cum citești o ofertă de construcții](https://gc-construct.eu/blog/deviz-pe-cantitati): Cum verifici un deviz pe cantități în construcții: antemăsurătoare, articole, unități de măsură, prețuri unitare, excluderi, TVA. Zece puncte de verificat înainte de semnare.
+- [Cât durează construcția unei case P+1: etapele, de la fundație la chei](https://gc-construct.eu/blog/cat-dureaza-constructia-unei-case): Durata orientativă pentru o casă P+1 executată după proiect: fundație, structură, roșu închis, instalații, finisaje. Ce întârzie șantierul și cum se ține graficul.
+- [Recepția la terminarea lucrărilor: ce verifici la predarea casei](https://gc-construct.eu/blog/receptia-lucrarilor-ce-verifici): Ce este recepția la terminarea lucrărilor, cine participă, ce documente primești (cartea tehnică a construcției) și lista de verificare înainte de a semna procesul-verbal.
