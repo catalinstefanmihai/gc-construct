@@ -743,6 +743,7 @@ input,textarea,button,select{font-family:inherit}
     <div style="display:{{ sentDisplay }};flex-direction:column;gap:10px;border:2px solid #201e1d;padding:22px">
       <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ae1800">{{ sentKicker }}</span>
       <p style="margin:0;font-size:17px;line-height:1.45;font-weight:600">{{ sentBody }}</p>
+      <a href="{{ waFallbackHref }}" target="_blank" rel="noopener" style="align-self:flex-start;display:flex;align-items:center;border:2px solid #201e1d;padding:12px 18px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase" style-hover="background:#201e1d;color:#f3f2f2">{{ waFallbackLabel }}</a>
     </div>
    </div>
   </div>
@@ -836,11 +837,11 @@ const T = {
     lang: "EN", advOpen: "Ascunde detaliile tehnice", advClosed: "Adaugă detalii tehnice (proiect, cantități)",
     estimate: "Estimare orientativă", perSqm: "€/m² construit", duration: "luni", crews: "echipe",
     diagram: "Stadiu clădire",
-    submit: "Trimite cererea", sentKicker: "Cerere înregistrată",
-    sentBody: "Te contactăm în maximum 24 de ore lucrătoare pentru vizita pe teren.",
+    submit: "Trimite pe WhatsApp", sentKicker: "Aproape gata",
+    sentBody: "Mesajul s-a deschis în WhatsApp, completat. Apasă Trimite acolo și îți răspundem în maximum 24 de ore lucrătoare.",
     err: "Completează numele și un număr de telefon valid.",
     errFail: "Cererea nu a putut fi trimisă. Scrie-ne direct pe WhatsApp.",
-    waFallback: "Trimite pe WhatsApp", sending: "Se trimite…",
+    waFallback: "Nu s-a deschis? Deschide WhatsApp", sending: "Se trimite…",
     phName: "Nume", phPhone: "Telefon", phMessage: "Ce vrei să construiești?",
     tech: "Descrie proiectul: regim de înălțime, structură, stadiu autorizație…",
     phConcrete: "Beton (m³)", phSteel: "Armătură (kg)", phMasonry: "Zidărie (m²)",
@@ -856,10 +857,10 @@ const T = {
     estimate: "Indicative estimate", perSqm: "€/m² built", duration: "months", crews: "crews",
     diagram: "Building stage",
     submit: "Send the request", sentKicker: "Request received",
-    sentBody: "We will call you within 24 working hours to arrange the site visit.",
+    sentBody: "Your message opened in WhatsApp, pre-filled. Tap Send there and we will reply within 24 working hours.",
     err: "Please enter your name and a valid phone number.",
     errFail: "The request could not be sent. Message us on WhatsApp instead.",
-    waFallback: "Send on WhatsApp", sending: "Sending…",
+    waFallback: "Didn't open? Open WhatsApp", sending: "Sending…",
     phName: "Name", phPhone: "Phone", phMessage: "What do you want to build?",
     tech: "Describe the project: number of storeys, structure, permit stage…",
     phConcrete: "Concrete (m³)", phSteel: "Rebar (kg)", phMasonry: "Masonry (m²)",
@@ -1186,7 +1187,7 @@ class Component extends DCLogic {
       setMessage: e => this.setState({ message: e.target.value }),
       errDisplay: s.err ? "block" : "none",
       errText: s.err === "fail" ? t.errFail : t.err,
-      waFallbackDisplay: s.err === "fail" ? "flex" : "none",
+      waFallbackDisplay: s.sent ? "flex" : "none",
       waFallbackHref: "https://wa.me/40728241379?text=" + encodeURIComponent(s.waText || ""),
       waFallbackLabel: t.waFallback,
       submit: () => {
@@ -1205,11 +1206,10 @@ class Component extends DCLogic {
           "\nContract: " + fields.contract + "\nSuprafață: " + fields.suprafata +
           "\nNiveluri: " + fields.niveluri + "\nFinisaj: " + fields.finisaj +
           "\nEstimare: " + fields.estimare + (fields.mesaj ? "\n\nMesaj: " + fields.mesaj : "");
-        if (s.sending) return;
-        this.setState({ sending: true, err: false });
-        fetch("/api/oferta", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(fields) })
-          .then(r => { if (!r.ok) throw 0; this.setState({ sent: true, sending: false }); })
-          .catch(() => this.setState({ sending: false, err: "fail", waText: text }));
+        const url = "https://wa.me/40728241379?text=" + encodeURIComponent(text);
+        const w = window.open(url, "_blank", "noopener");
+        if (!w) window.location.href = url;
+        this.setState({ sent: true, err: false, waText: text });
       },
       formDisplay: s.sent ? "none" : "flex",
       sentDisplay: s.sent ? "flex" : "none",
